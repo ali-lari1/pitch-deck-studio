@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 390 844" font-family="Inter, system-ui, sans-serif">
+  <rect width="390" height="844" fill="#F4F5F7"/>
+  <text x="40" y="52" font-size="16" font-weight="600" fill="#0E1116">9:41</text>
+  <g fill="#0E1116"><rect x="300" y="41" width="3" height="6" rx="1"/><rect x="305" y="39" width="3" height="8" rx="1"/><rect x="310" y="37" width="3" height="10" rx="1"/><rect x="315" y="35" width="3" height="12" rx="1"/>
+  <rect x="326" y="36" width="24" height="12" rx="3.5" fill="none" stroke="#0E1116" stroke-width="1.4"/><rect x="328.5" y="38.5" width="17" height="7" rx="2"/><rect x="351.5" y="40" width="2" height="4" rx="1"/></g>
+  <text x="24" y="122" font-size="28" font-weight="700" fill="#0E1116">Good morning, Dana</text>
+  <text x="24" y="150" font-size="15" fill="#5E6673">Overnight, Dispensa drafted 23 fixes.</text>
+  <rect x="16" y="176" width="358" height="150" rx="18" fill="#2F5BFF"/>
+  <text x="36" y="214" font-size="13" font-weight="600" fill="#C9D4FF" letter-spacing="1.2">RECOVERABLE TODAY</text>
+  <text x="36" y="268" font-size="46" font-weight="700" fill="#FFFFFF">$18,420</text>
+  <text x="36" y="302" font-size="14" fill="#DCE3FF">across 19 claims and 4 prior auths</text>
+  <g font-size="15">
+    <rect x="16" y="346" width="358" height="92" rx="16" fill="#FFFFFF"/>
+    <text x="34" y="380" font-weight="600" fill="#0E1116">DIR appeal · Express Scripts</text>
+    <text x="34" y="408" fill="#5E6673">212 claims · letter ready</text>
+    <text x="356" y="380" text-anchor="end" font-weight="700" fill="#0E1116">$9,870</text>
+    <rect x="16" y="450" width="358" height="92" rx="16" fill="#FFFFFF"/>
+    <text x="34" y="484" font-weight="600" fill="#0E1116">Prior auth · Claim #48213</text>
+    <text x="34" y="512" fill="#5E6673">Chart notes attached</text>
+    <text x="356" y="484" text-anchor="end" font-weight="700" fill="#0E1116">$1,284</text>
+    <rect x="16" y="554" width="358" height="92" rx="16" fill="#FFFFFF"/>
+    <text x="34" y="588" font-weight="600" fill="#0E1116">Underpayment · Caremark</text>
+    <text x="34" y="616" fill="#5E6673">3 claims below contract</text>
+    <text x="356" y="588" text-anchor="end" font-weight="700" fill="#0E1116">$612</text>
+  </g>
+  <rect x="16" y="720" width="358" height="64" rx="32" fill="#0E1116"/>
+  <text x="195" y="759" font-size="18" font-weight="600" fill="#FFFFFF" text-anchor="middle">Approve all 23</text>
+</svg>

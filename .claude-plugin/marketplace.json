@@ -7,7 +7,7 @@
       "name": "pitch-deck-studio",
       "source": "./",
       "description": "Interviews the founder, researches the vertical live, and builds a sleek HTML/PDF pitch deck from 114 successful post-2022 decks.",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "license": "MIT",
       "keywords": ["pitch-deck", "fundraising", "startup", "slides", "investor", "presentation"]
     }

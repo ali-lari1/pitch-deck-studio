@@ -1,13 +1,15 @@
 ---
 title: Dispensa — Seed 2026
 company: Dispensa
-target_slides: 12-14
+target_slides: 13-15
 confidential: Confidential · Fictional example
 purpose: fundraise
 ---
 
 @layout title
 @kicker Seed round · 2026
+@side assets/pharmacist.jpg
+@side-focus 30% center
 
 # Dispensa
 ## The AI back office for independent pharmacies.
@@ -22,6 +24,7 @@ Open with the one-liner and stop. Let it land before the problem slide.
 
 @layout statement
 @kicker The problem
+@side assets/paperwork.jpg
 
 # Independent pharmacists spend ==19 hours a week== on insurance paperwork instead of patients.
 
@@ -29,6 +32,21 @@ Prior auths, claim rejections and DIR fee reconciliation are done by hand, acros
 
 ???
 19 hours comes from our time-and-motion study across 41 pharmacies (Q2 2026). Cite it if asked.
+
+---
+
+@layout image
+@kicker Who we serve
+@bg assets/storefront.jpg
+@invert
+@dim 0.9
+
+# The pharmacy on Main Street.
+
+Family-owned, trusted for generations, and losing money to payer admin it was never built for.
+
+???
+Independents fill about a third of US retail prescriptions and are often the only pharmacy in rural towns.
 
 ---
 
@@ -50,11 +68,12 @@ $61K :: Lost per store per year :: To write-offs and unpaid DIR clawbacks
 
 # Dispensa files, fixes and chases every claim.
 
-- Reads every rejected claim and drafts the fix
-- Submits prior auths across all six payer portals
+- Drafts the fix for every rejected claim
+- Files prior auths across six payer portals
 - Flags DIR clawbacks before they hit the bank
 
 ![Dispensa inbox](assets/product.svg)
+![Dispensa on mobile](assets/mobile.svg "phone")
 
 ???
 Demo here if live. In the send-ahead version this screenshot does the talking.
@@ -140,16 +159,16 @@ Generic RPA :: 0.18 :: 0.7
 
 @layout quote
 @kicker Customers
+@side assets/counseling.jpg
+@side-pos left
 
 # Pharmacists tell other pharmacists.
 
 > We got back $38,000 in clawbacks in the first quarter. I finally leave at six.
 > — Owner, 2-store independent pharmacy, Ohio
 
-|||
-
-> It is the first software that does the work instead of giving me more of it.
-> — PIC, rural independent, Texas
+???
+Two of our first ten customers came from this owner's referrals. Quote used with permission (illustrative).
 
 ---
 

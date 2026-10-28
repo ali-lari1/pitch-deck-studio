@@ -27,7 +27,7 @@ ASSETS = os.path.join(HERE, "..", "assets")
 LAYOUTS = {
     "title", "statement", "section", "default", "split", "image", "stats",
     "chart", "columns", "logos", "team", "timeline", "table", "quote",
-    "market", "ask", "matrix", "screens", "steps", "html", "closing",
+    "market", "ask", "matrix", "screens", "steps", "html", "closing", "gallery",
 }
 
 WORD_LIMIT = {  # on-slide words before the linter complains
@@ -35,7 +35,7 @@ WORD_LIMIT = {  # on-slide words before the linter complains
     "default": 60, "split": 60, "columns": 80, "stats": 70, "chart": 50,
     "table": 120, "team": 90, "timeline": 80, "market": 60, "ask": 70,
     "matrix": 50, "logos": 30, "screens": 40, "steps": 70, "closing": 30,
-    "html": 9999,
+    "gallery": 70, "html": 9999,
 }
 
 
@@ -533,7 +533,7 @@ def render_slide(sl, idx, total, meta, brand, img):
         inner = '<div class="center">%s%s</div>' % (render_head(head, d), R(rest))
     elif layout == "image":
         inner = '<div class="over">%s%s</div>' % (render_head(head, d), R([b for b in rest if b["t"] != "img"]))
-    elif layout in ("stats", "timeline", "team", "steps", "logos"):
+    elif layout in ("stats", "timeline", "team", "steps", "logos", "gallery"):
         if layout == "logos" and not items:
             for b in [x for x in rest if x["t"] == "ul"]:
                 items += [{"t": "item", "f": [n]} for n in b["items"]]
@@ -561,9 +561,13 @@ def render_slide(sl, idx, total, meta, brand, img):
             vis = [b for b in body if b["t"] in ("img", "chart")]
             txt = [b for b in body if b["t"] not in ("img", "chart")]
             frame = d.get("frame", "browser" if layout == "screens" else "none")
-            vis_html = "".join(
-                '<div class="frame frame-%s">%s</div>' % (frame, render_block(b, img)) if b["t"] == "img" else render_block(b, img)
-                for b in vis)
+            def framed(b):
+                fr = frame
+                if b.get("cap") in ("browser", "phone", "none"):  # ![alt](src "phone") picks the frame per image
+                    fr = b["cap"]
+                    b = dict(b, cap="")
+                return '<div class="frame frame-%s">%s</div>' % (fr, render_block(b, img))
+            vis_html = "".join(framed(b) if b["t"] == "img" else render_block(b, img) for b in vis)
             inner = '<div class="splitwrap%s"><div class="txt">%s%s</div><div class="vis">%s</div></div>' % (
                 " flip" if d.get("flip") else "", render_head(head, d), R(txt), vis_html)
         elif layout == "market":
@@ -586,6 +590,8 @@ def render_slide(sl, idx, total, meta, brand, img):
             cls.append("has-bg")
     if d.get("dim"):
         style.append("--dim:%s" % d["dim"])
+    if d.get("bg-focus"):
+        style.append("--bg-pos:%s" % d["bg-focus"])
     if d.get("mode") == "invert" or "invert" in d:
         cls.append("mode-invert")
     if bg == "accent":
@@ -594,6 +600,15 @@ def render_slide(sl, idx, total, meta, brand, img):
         cls.append("al-" + d["align"])
     if d.get("class"):
         cls.extend(d["class"].split())
+    if d.get("side"):
+        pos = "left" if d.get("side-pos") == "left" else "right"
+        cls += ["has-side", "side-" + pos]
+        if d.get("side-width"):
+            style.append("--side-w:%s" % d["side-width"])
+        side_html = '<div class="sideimg" style="background-image:url(\'%s\');background-position:%s"></div>' % (
+            img(d["side"]), esc(d.get("side-focus", "center")))
+    else:
+        side_html = ""
     if layout == "image" and imgs and not bg:
         style.append("--bgimg:url('%s')" % img(imgs[0]["src"]))
         cls.append("has-bg")
@@ -611,8 +626,8 @@ def render_slide(sl, idx, total, meta, brand, img):
         chrome = '<div class="chrome"><div class="mark">%s</div>%s<div class="pg">%d</div></div>' % (mk, conf, idx + 1)
     notes = '<aside class="notes">%s</aside>' % "".join(
         "<p>%s</p>" % inline(p) for p in re.split(r"\n\s*\n", sl["notes"]) if p.strip()) if sl["notes"] else ""
-    return ('<section class="%s" style="%s" data-i="%d"><div class="in">%s</div>%s%s</section>%s' % (
-        " ".join(cls), ";".join(style), idx, inner, "".join(foot), chrome, notes), layout)
+    return ('<section class="%s" style="%s" data-i="%d">%s<div class="in">%s</div>%s%s</section>%s' % (
+        " ".join(cls), ";".join(style), idx, side_html, inner, "".join(foot), chrome, notes), layout)
 
 
 def render_matrix(items, d):
@@ -764,6 +779,19 @@ def lint(slides, layouts, meta):
             break
         if lay in ("split", "screens") and h1 and plain_words(h1) > 10:
             warns.append("slide %d (%s): headline is %d words in a half-width column - aim for <= 9" % (i + 1, lay, plain_words(h1)))
+    visual = 0
+    for sl, lay in zip(slides[:n] if n else slides, layouts[:n] if n else layouts):
+        d = sl["d"]
+        if d.get("side") or (d.get("bg") and not re.match(r"^(#|rgb|hsl|var\(|linear|radial|accent)", d["bg"])) \
+                or any(b["t"] == "img" or b.get("img") for b in sl["blocks"]):
+            visual += 1
+    total_main = max(n, 1)
+    if total_main >= 6 and visual == 0:
+        warns.append("deck: no photos or screenshots - add 3-5 (product screens, the customer, the team, the place). See show-dont-tell.md")
+    elif total_main >= 6 and visual / total_main < 0.2:
+        warns.append("deck: only %d of %d main slides carry an image - aim for about 1 in 3" % (visual, total_main))
+    elif visual / total_main > 0.6:
+        warns.append("deck: %d of %d slides are image slides - let some breathe with type, numbers or charts" % (visual, total_main))
     target = meta.get("target_slides")
     if target:
         lo, _, hi = target.partition("-")
@@ -772,6 +800,7 @@ def lint(slides, layouts, meta):
             warns.append("deck: %d main slides (before the Appendix divider), target %s" % (n, target))
     if "ask" not in layouts and meta.get("purpose", "fundraise") == "fundraise":
         warns.append("deck: no @layout ask slide - investors expect the raise, use of funds and milestones")
+    lint.visual = visual
     return warns, words_total
 
 
@@ -828,11 +857,11 @@ def build(root, embed=False, out=None, quiet=False, preset=None):
     report = {
         "output": out_path, "slides": len(slides), "on_slide_words": words,
         "words_per_slide": round(words / max(len(slides), 1), 1),
-        "layouts": layouts, "preset": brand.get("preset"), "warnings": warns,
+        "layouts": layouts, "preset": brand.get("preset"), "warnings": warns, "image_slides": getattr(lint, "visual", 0),
     }
     if not quiet:
-        print("built %s  (%d slides, %d on-slide words, %.1f/slide, preset=%s)" % (
-            out_path, len(slides), words, report["words_per_slide"], brand.get("preset")))
+        print("built %s  (%d slides, %d on-slide words, %.1f/slide, %d image slides, preset=%s)" % (
+            out_path, len(slides), words, report["words_per_slide"], report["image_slides"], brand.get("preset")))
         print("layouts: " + " ".join("%d:%s" % (i + 1, l) for i, l in enumerate(layouts)))
         if warns:
             print("\nQA warnings (%d):" % len(warns))

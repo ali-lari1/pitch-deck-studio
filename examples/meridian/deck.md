@@ -2,12 +2,14 @@
 title: Meridian Orbital — Series A
 company: Meridian
 confidential: Confidential · Fictional example
-target_slides: 9-12
+target_slides: 9-11
 ---
 
 @layout title
 @kicker Series A · 2026
-@bg radial-gradient(150% 95% at 50% 150%, #5b93e0 0%, #1a3f78 28%, #07142a 52%, #000 72%)
+@bg assets/limb-sunrise.jpg
+@bg-focus center 85%
+@dim 0.97
 
 # Meridian
 ## Refuelling satellites in orbit, so they never have to die.
@@ -22,6 +24,8 @@ Satellites are retired when they run out of fuel, not when they break. We fix th
 
 @layout statement
 @kicker The problem
+@side assets/satellite.jpg
+@side-focus 35% center
 
 # Every year, ==$9B of working satellites== are retired because their tanks are empty.
 
@@ -49,8 +53,27 @@ $1.8M :: Cost per refuel at scale
 
 ---
 
+@layout gallery
+@kicker Why now
+@source NASA Robotic Refueling Mission (2013); NASA Commercial Crew Program (2019); Canadian Space Agency
+
+# Every piece of on-orbit refuelling has already flown.
+
+![NASA Robotic Refueling Mission tools](assets/refueling-lab.jpg)
+Robotic fuel transfer :: NASA's Robotic Refueling Mission moved fuel robotically on the ISS in 2013 :: Image: NASA
+![Dragon approaching the ISS](assets/dragon.jpg)
+Autonomous docking :: Commercial spacecraft have docked with the ISS without a pilot since 2019 :: Image: NASA
+![Canadarm2 and Dextre](assets/canadarm.jpg)
+Robotic servicing :: Canadarm2 and Dextre service hardware on orbit every year :: Image: NASA
+
+???
+The technology risk is retired. What's missing is a commercial service with a standard interface, which is us.
+
+---
+
 @layout section
-@bg radial-gradient(90% 90% at 85% 20%, #1e3a66 0%, #000 60%)
+@bg assets/earth.jpg
+@dim 0.85
 
 # Our depot business
 
@@ -119,7 +142,9 @@ $28M
 ---
 
 @layout closing
-@bg radial-gradient(150% 95% at 50% 150%, #5b93e0 0%, #1a3f78 28%, #07142a 52%, #000 72%)
+@bg assets/limb-sunrise.jpg
+@bg-focus center 85%
+@dim 0.97
 
 # Meridian
 ## Nothing in orbit should die of thirst.

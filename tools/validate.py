@@ -61,7 +61,7 @@ for ex in sorted(os.listdir(os.path.join(ROOT, "examples"))):
         rep = json.loads(r.stdout.decode())
         check(not [w for w in rep["warnings"] if "missing image" in w], "example %s has missing images" % ex)
 
-for script in ("shot.py", "export_pptx.py", "find_decks.py", "init_project.py", "brand_sheet.py", "brand_from_url.py", "export.py", "build.py"):
+for script in ("find_images.py", "shot.py", "export_pptx.py", "find_decks.py", "init_project.py", "brand_sheet.py", "brand_from_url.py", "export.py", "build.py"):
     r = subprocess.run([sys.executable, os.path.join(SK, "scripts", script), "--help"], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
     check(r.returncode == 0, "%s --help failed" % script)
 

@@ -42,6 +42,9 @@ Speaker notes / reader text for this slide.
 | `@note <text>` | footnote without the "Source:" prefix |
 | `@bg <image or color or accent>` | full-bleed background image (gradient added for legibility), a CSS colour, or `accent` |
 | `@dim 0.4-1` | strength of the legibility gradient on background images |
+| `@bg-focus <css position>` | which part of the background photo stays in frame (e.g. `center 85%`) |
+| `@side <image>` | half-bleed photo on any layout; content moves to the other half |
+| `@side-pos left\|right`, `@side-focus 30% center`, `@side-width 40%` | side photo position, crop focus and width (default right, 46%) |
 | `@invert` | swap to the inverse palette for this slide (a dark slide in a light deck, and vice versa) |
 | `@align center\|bottom` | alignment for statement, section and image slides |
 | `@class <names>` | layout variants (see below) |
@@ -60,7 +63,7 @@ Speaker notes / reader text for this slide.
 | paragraph text | body text; `**bold**`, `*italic*`, `` `code` ``, `==accent==`, `[link](url)`, ` // ` = line break |
 | `- item` / `1. item` | bullets / numbered list (max 5) |
 | `value :: label :: note` | an **item**: a stat, team member, step, milestone, logo, use-of-funds row. Meaning depends on the layout |
-| `![alt](assets/x.png)` | image; an image line directly above an item attaches to it (team photo, logo) |
+| `![alt](assets/x.png)` | image; an image line directly above an item attaches to it (team photo, logo, gallery tile). In `screens`/`split`, `![alt](x.png "phone")` picks the device frame per image (`browser`, `phone`, `none`) |
 | `> quote` then `> — Name, role` | pull quote with attribution |
 | `\|\|\|` on its own line | column break |
 | a pipe table | styled table; `✓` `✗` `~` render as ● ○ ◐; wrap the first cell in `==...==` to highlight your row |
@@ -83,6 +86,7 @@ Speaker notes / reader text for this slide.
 | `steps` | how it works, the loop | items `Title :: description` (auto-numbered) |
 | `timeline` | milestones, roadmap; `@class past` fills all dots | items `date :: title :: description` |
 | `team` | founders; `@class round` for round photos | `![Name](assets/x.jpg)` above `Name :: Role :: credential`; without a photo, an initials avatar is drawn |
+| `gallery` | 2-4 captioned photos (why now, use cases, deployments); `@class wide` for 16:10 tiles | `![alt](a.jpg)` above `Title :: caption :: credit` |
 | `logos` | customers, investors, press; `@class mono` single-colour logos | logo images (`![Ramp](assets/ramp.svg)`, best), or names as a bullet list (`- Ramp`) or items (`Ramp ::`) |
 | `table` | comparisons, use of funds detail, financials | pipe table |
 | `matrix` | competitive 2×2 | items `Name :: x(0-1) :: y(0-1)` + `@x`, `@y`, `@us` |
@@ -108,6 +112,6 @@ Speaker notes / reader text for this slide.
 ## QA output
 `build.py` prints the slide count, words per slide, the layout per slide and warnings: too many words, headline too long
 or missing, more than 5 bullets, numbers without `@source`, placeholders left in (`lorem`, `TBD`, `TODO`, `XX`),
-main-slide count (before the Appendix divider) outside `target_slides`, long headlines in half-width columns, missing ask slide,
+image balance (about 1 slide in 3 should carry a photo or screenshot), main-slide count (before the Appendix divider) outside `target_slides`, long headlines in half-width columns, missing ask slide,
 and missing images. `build.py --outline` prints a slide table (layout, headline, source, placeholder count) for `brief.md`. `export.py --check` reports elements that
 overflow their slide in a real browser. Fix all of them before delivering.

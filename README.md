@@ -19,7 +19,7 @@ and Antigravity**, or any agent that reads `SKILL.md` skills. It needs only Pyth
 | One template for every company | **23 vertical playbooks** that change the order, emphasis, proof and look: biotech ≠ marketplace ≠ defense |
 | Stale "best practices" | A **live market sweep** each run: who's funding the vertical, current benchmarks, comparable raises, and what investors scrutinize right now |
 | Invented numbers that sound plausible | A **facts ledger**: every number on a slide traces to you or a cited source, and unknowns show as `[[placeholders]]` |
-| Bullet-point walls | **Show, don't tell**: charts, framed product screenshots, stats grids, 2×2s, timelines, logo walls, and a use-of-funds layout |
+| Bullet-point walls, or decks with no images at all | **Show, don't tell**: charts, framed product screenshots (browser + phone), stats grids, 2×2s, timelines, logo walls, and real photography at about one slide in three. Openly licensed photos (Openverse, NASA, Unsplash, Pexels) are found and credited for you |
 | Generic purple gradients | **11 minimalist design systems**, inspired by the SpaceX 2026 roadshow, the Airbnb deck and Stripe-style decks, which adopt your brand or create one |
 | A wall of questions | **One message with at most 7 questions**. It reads your site and docs first and asks only what it can't infer |
 
@@ -218,7 +218,7 @@ Sep: 1100
 Speaker notes / reader text.
 ````
 
-There are 21 layouts: title, statement, section, image, split, screens, stats (with a roadshow "rows" variant), chart (bar, hbar, line, area,
+There are 22 layouts: title, statement, section, image, split, screens, gallery, stats (with a roadshow "rows" variant), chart (bar, hbar, line, area,
 donut, stack), columns, steps, timeline, team, logos, table, matrix (2×2), market, quote, ask, closing and raw html.
 The full reference is in [`deck-format.md`](skills/pitch-deck-studio/references/deck-format.md).
 
@@ -233,7 +233,8 @@ skills/pitch-deck-studio/
 ├── SKILL.md                 # the workflow (portable Agent Skills frontmatter)
 ├── references/              # loaded on demand: interview, sweep, narrative, design, format, review, compose,
 │   └── verticals/           #   deck library, audiences, stats, and 23 vertical playbooks
-├── scripts/                 # build, export (PDF/PNG/check), export_pptx, init_project, brand_from_url, brand_sheet, find_decks
+├── scripts/                 # build, export (PDF/PNG/check), export_pptx, init_project, brand_from_url, brand_sheet,
+│                            #   find_decks, find_images (licensed photos + credits), shot (product screenshots)
 ├── assets/                  # deck.css, deck.js, presets.json, templates/
 └── data/decks.json          # the 114-deck library
 examples/                    # two fictional decks (source + rendered HTML/PDF)

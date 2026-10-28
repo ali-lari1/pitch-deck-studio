@@ -75,7 +75,8 @@ Google Font if not (and say so). Use the logo provided. Never redraw a client's 
 - Headlines ≤ 12 words; body text ≥ 24 px; labels in small caps with tracking; numbers in the numbers font.
 - At most 5 bullets, at most ~60 words on a normal slide (the linter warns per layout).
 - Charts: no gridlines, no 3D, no legends when direct labels work, and a highlighted point for the takeaway.
-- Images: `@bg` for full-bleed with automatic legibility gradient (`@dim 0.4-0.95`), and a `screens` frame for UI.
+- Images: about 1 slide in 3. Use `@side` for half-bleed photos, `@bg` for full-bleed with an automatic legibility gradient (`@dim 0.4-0.97`,
+  `@bg-focus`), `gallery` for captioned sets, and `screens` frames (browser + phone) for UI. See the image budget in `show-dont-tell.md`.
 
 ## Banned (the "AI slop" list)
 Purple-to-blue gradients on everything; glassmorphism cards; emoji as icons; stock photos of handshakes, people pointing

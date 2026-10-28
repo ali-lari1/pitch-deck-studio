@@ -4,7 +4,7 @@ description: Build investor-grade pitch decks for any startup in any vertical. I
 license: MIT
 compatibility: Works in any agent that can read files and run shell commands (Claude Code, Codex, Gemini CLI, OpenCode, Hermes, Grok, Cursor, Copilot, Goose, Amp...). Needs Python 3.8+. Web search improves the market sweep, and any Chromium-family browser enables PDF/PNG export. Both are optional.
 metadata:
-  version: "1.0.0"
+  version: "1.1.0"
   author: Ali Lari
   homepage: https://github.com/ali-lari1/pitch-deck-studio
 ---
@@ -102,8 +102,11 @@ Read `references/design-system.md`.
 Read `references/deck-format.md` (`assets/templates/example-deck.md` is a complete worked example), then replace the
 scaffolded outline in `deck.md`:
 - Use the layouts that show rather than tell: `stats`, `chart`, `screens`, `logos`, `matrix`, `timeline`, `team`, `ask`.
-- Product visuals: use the founder's screenshots first. Otherwise run
-  `python3 SKILL_DIR/scripts/shot.py <url> <project>/assets/<name>.png [--mobile]` on their live product or site.
+- **Images, the right amount:** about one slide in three (title, problem, the customer or place, product, proof). The
+  budget table is in `references/show-dont-tell.md`. Product visuals come from the founder's screenshots first, otherwise
+  `python3 SKILL_DIR/scripts/shot.py <url> <project>/assets/<name>.png [--mobile]`. For context photos, run
+  `python3 SKILL_DIR/scripts/find_images.py "<query>" --preview-dir <project>/research/img`, look at the previews, then
+  `--download <project>/assets --pick N`. Credits are recorded automatically. Place images with `@side`, `@bg`, `gallery` or `screens`.
 - Give each slide speaker notes after `???`. They are the voice-over when presenting and the reader text in send-ahead
   mode, which means the slide stays sparse while the reasoning lives in the notes.
 - Add `@source` to every slide with external numbers. Put deep detail after a `section` slide titled "Appendix". Slides after it

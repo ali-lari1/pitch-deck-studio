@@ -1,6 +1,7 @@
 # Examples
 
 Two **fictional** companies, each built entirely from a `deck.md` + `brand.json` with Pitch Deck Studio. All numbers are illustrative.
+Photos are openly licensed (Unsplash, NASA). See each `assets/CREDITS.md`. The people pictured are not affiliated with these fictional companies.
 
 | Example | Preset | Arc | Files |
 |---|---|---|---|
