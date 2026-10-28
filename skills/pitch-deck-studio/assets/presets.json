@@ -1,0 +1,92 @@
+{
+  "cosmos": {
+    "description": "Cinematic dark. Light all-caps grotesk headlines, condensed numerals, hairline rules, full-bleed photography. Inspired by public-market roadshow decks. Space, defense, deeptech, infrastructure, ambitious AI.",
+    "mode": "dark",
+    "colors": {"bg": "#000000", "fg": "#F2F2F0", "muted": "#8E8E8E", "accent": "#5AA0FF", "surface": "#111214", "line": "#2B2D31", "inv_bg": "#F2F2F0", "inv_fg": "#000000"},
+    "fonts": {"display": "Barlow", "display_weight": 300, "display_case": "uppercase", "display_tracking": "0.02em", "display_line_height": 1.06,
+              "body": "Barlow", "numbers": "Barlow Condensed", "numbers_weight": 400, "mono": "JetBrains Mono", "label_tracking": "0.2em"},
+    "h1_size": 70, "radius": 0, "padding": 112
+  },
+  "swiss": {
+    "description": "Clean white, tight grotesk, one vivid accent. The default for B2B SaaS, payments and anything that should feel precise.",
+    "mode": "light",
+    "colors": {"bg": "#FFFFFF", "fg": "#0E1116", "muted": "#5E6673", "accent": "#4C5BFF", "surface": "#F4F5F7", "line": "#E3E5EA", "inv_bg": "#0E1116", "inv_fg": "#FFFFFF"},
+    "fonts": {"display": "Inter Tight", "display_weight": 600, "display_tracking": "-0.03em", "display_line_height": 1.02,
+              "body": "Inter", "numbers": "Inter Tight", "numbers_weight": 500, "mono": "JetBrains Mono", "label_tracking": "0.12em"},
+    "h1_size": 84, "radius": 12
+  },
+  "mono": {
+    "description": "Black on white, huge type, a single signal-orange accent. Bold and minimal; good for AI apps and category-creation stories.",
+    "mode": "light",
+    "colors": {"bg": "#FFFFFF", "fg": "#000000", "muted": "#6B6B6B", "accent": "#FF4F00", "surface": "#F3F3F3", "line": "#E2E2E2", "inv_bg": "#000000", "inv_fg": "#FFFFFF"},
+    "fonts": {"display": "Inter Tight", "display_weight": 700, "display_tracking": "-0.045em", "display_line_height": 0.98,
+              "body": "Inter", "numbers": "Inter Tight", "numbers_weight": 600, "mono": "JetBrains Mono", "label_tracking": "0.14em"},
+    "h1_size": 96, "radius": 0
+  },
+  "terminal": {
+    "description": "Near-black, Geist + Geist Mono, terminal-green accent. Developer tools, infrastructure, open source, AI infra.",
+    "mode": "dark",
+    "colors": {"bg": "#0A0A0B", "fg": "#EDEDED", "muted": "#8B8B8F", "accent": "#4ADE80", "surface": "#141416", "line": "#26262A", "inv_bg": "#EDEDED", "inv_fg": "#0A0A0B"},
+    "fonts": {"display": "Geist", "display_weight": 600, "display_tracking": "-0.035em", "display_line_height": 1.02,
+              "body": "Geist", "numbers": "Geist Mono", "numbers_weight": 500, "mono": "Geist Mono", "label_tracking": "0.12em"},
+    "h1_size": 80, "radius": 10, "on_accent": "#0A0A0B"
+  },
+  "editorial": {
+    "description": "Warm paper, high-contrast serif headlines, terracotta accent. Consumer brands, D2C/CPG, food, media, creator economy.",
+    "mode": "light",
+    "colors": {"bg": "#F5F1EA", "fg": "#1B1A17", "muted": "#6E675D", "accent": "#C2491D", "surface": "#ECE6DC", "line": "#DCD3C6", "inv_bg": "#1B1A17", "inv_fg": "#F5F1EA"},
+    "fonts": {"display": "Instrument Serif", "display_weight": 400, "display_tracking": "-0.01em", "display_line_height": 1.0,
+              "body": "Inter", "numbers": "Instrument Serif", "numbers_weight": 400, "mono": "JetBrains Mono", "label_tracking": "0.14em",
+              "google_specs": {"Instrument Serif": "ital@0;1"}},
+    "h1_size": 100, "radius": 4
+  },
+  "warm": {
+    "description": "Bright white, friendly rounded sans, coral accent, generous photography. Marketplaces, travel, consumer apps, community.",
+    "mode": "light",
+    "colors": {"bg": "#FFFFFF", "fg": "#222222", "muted": "#6A6A6A", "accent": "#F0544F", "surface": "#F7F7F7", "line": "#EBEBEB", "inv_bg": "#222222", "inv_fg": "#FFFFFF"},
+    "fonts": {"display": "Plus Jakarta Sans", "display_weight": 700, "display_tracking": "-0.025em", "display_line_height": 1.04,
+              "body": "Plus Jakarta Sans", "numbers": "Plus Jakarta Sans", "numbers_weight": 700, "mono": "JetBrains Mono",
+              "label_case": "none", "label_tracking": "0"},
+    "h1_size": 80, "radius": 20
+  },
+  "lab": {
+    "description": "Clinical white, IBM Plex, teal accent, comfortable with dense data. Biotech, medtech, digital health, scientific deeptech.",
+    "mode": "light",
+    "colors": {"bg": "#FBFCFC", "fg": "#0D2B36", "muted": "#5B717A", "accent": "#0A8F8A", "surface": "#EEF3F4", "line": "#D7E1E4", "inv_bg": "#0D2B36", "inv_fg": "#FBFCFC"},
+    "fonts": {"display": "IBM Plex Sans", "display_weight": 500, "display_tracking": "-0.015em", "display_line_height": 1.08,
+              "body": "IBM Plex Sans", "numbers": "IBM Plex Mono", "numbers_weight": 500, "mono": "IBM Plex Mono", "label_tracking": "0.12em"},
+    "h1_size": 72, "radius": 6, "padding": 108
+  },
+  "ledger": {
+    "description": "Off-white, deep navy ink, money-green accent, tabular numerals. Fintech, insurance, B2B finance, regulated industries.",
+    "mode": "light",
+    "colors": {"bg": "#FAFAF8", "fg": "#0B1B33", "muted": "#5C6779", "accent": "#1E6B52", "surface": "#F0F1EE", "line": "#DEE1E3", "inv_bg": "#0B1B33", "inv_fg": "#FAFAF8"},
+    "fonts": {"display": "Manrope", "display_weight": 700, "display_tracking": "-0.03em", "display_line_height": 1.04,
+              "body": "Manrope", "numbers": "Manrope", "numbers_weight": 600, "mono": "JetBrains Mono", "label_tracking": "0.12em"},
+    "h1_size": 80, "radius": 8
+  },
+  "verdant": {
+    "description": "Soft sage paper, forest ink, green accent, Space Grotesk. Climate, energy, agtech, sustainability.",
+    "mode": "light",
+    "colors": {"bg": "#F3F5EF", "fg": "#14251C", "muted": "#5D6B62", "accent": "#2E8B57", "surface": "#E7ECE2", "line": "#D3DACB", "inv_bg": "#14251C", "inv_fg": "#F3F5EF"},
+    "fonts": {"display": "Space Grotesk", "display_weight": 600, "display_tracking": "-0.03em", "display_line_height": 1.03,
+              "body": "Inter", "numbers": "Space Grotesk", "numbers_weight": 500, "mono": "JetBrains Mono", "label_tracking": "0.12em"},
+    "h1_size": 82, "radius": 14
+  },
+  "mission": {
+    "description": "Dark slate, sober all-caps headlines, amber signal accent. Defense, dual-use, govtech, public safety, critical infrastructure.",
+    "mode": "dark",
+    "colors": {"bg": "#0D1014", "fg": "#E8EAED", "muted": "#8A929C", "accent": "#E0A43A", "surface": "#161A20", "line": "#2A3038", "inv_bg": "#E8EAED", "inv_fg": "#0D1014"},
+    "fonts": {"display": "Archivo", "display_weight": 600, "display_case": "uppercase", "display_tracking": "0.01em", "display_line_height": 1.04,
+              "body": "Inter", "numbers": "Barlow Condensed", "numbers_weight": 500, "mono": "JetBrains Mono", "label_tracking": "0.2em"},
+    "h1_size": 68, "radius": 0, "on_accent": "#0D1014"
+  },
+  "noir": {
+    "description": "Dark editorial: near-black, warm ivory serif, champagne accent. Luxury, premium consumer, fashion, hospitality, culture.",
+    "mode": "dark",
+    "colors": {"bg": "#0E0E0E", "fg": "#F4F1EA", "muted": "#9A958C", "accent": "#D8B26E", "surface": "#181818", "line": "#2C2B29", "inv_bg": "#F4F1EA", "inv_fg": "#0E0E0E"},
+    "fonts": {"display": "Fraunces", "display_weight": 400, "display_tracking": "-0.02em", "display_line_height": 1.02,
+              "body": "Inter", "numbers": "Fraunces", "numbers_weight": 400, "mono": "JetBrains Mono", "label_tracking": "0.18em"},
+    "h1_size": 88, "radius": 2, "on_accent": "#0E0E0E"
+  }
+}

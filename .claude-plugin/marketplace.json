@@ -1,0 +1,15 @@
+{
+  "name": "pitch-deck-studio",
+  "owner": { "name": "Ali Lari", "url": "https://github.com/ali-lari1" },
+  "metadata": { "description": "Investor-grade pitch decks for any startup, in any agent." },
+  "plugins": [
+    {
+      "name": "pitch-deck-studio",
+      "source": "./",
+      "description": "Interviews the founder, researches the vertical live, and builds a sleek HTML/PDF pitch deck from 114 successful post-2022 decks.",
+      "version": "1.0.0",
+      "license": "MIT",
+      "keywords": ["pitch-deck", "fundraising", "startup", "slides", "investor", "presentation"]
+    }
+  ]
+}
